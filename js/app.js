@@ -1,5 +1,5 @@
-const numButtons = document.getElementsByClassName('numbers');
-const operators = document.getElementsByClassName('btn btn-secondary operators');
+const numButtons = document.getElementsByClassName('.numbers');
+const operators = document.getElementsByClassName('.operators');
 const display = document.getElementById('inp');
 const equalSign = document.getElementById('equals');
 
