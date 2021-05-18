@@ -1,257 +1,627 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>calculate.in</title>
+    <!--Favicon-->
+    <link
+      href="https://www.pngrepo.com/png/9578/180/calculator.png"
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+    />
+    <!--Bootstrap CSS CDN-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <!--Font Awesome CDN-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous"
+    />
+    <script src="./js/app.js" defer></script>
+  </head>
 
-<head>
-  <title>calculate.in</title>
-  <!--Favicon-->
-  <link href="https://www.pngrepo.com/png/9578/180/calculator.png" rel="icon" type="image/png" sizes='16x16'>
-  <!--Bootstrap CSS CDN-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-  <!--Font Awesome CDN-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
-    integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
-    crossorigin="anonymous" />
-</head>
+  <body>
+    <!--Navbar-->
+    <nav class="navbar navbar-light bg-dark">
+      <div class="container-fluid px-5">
+        <a class="navbar-brand text-light" href="#">calculate.in</a>
+      </div>
+    </nav>
 
-<body>
-
-  <!--Navbar-->
-  <nav class="navbar navbar-light bg-dark">
-    <div class="container-fluid px-5">
-      <a class="navbar-brand text-light" href="#">calculate.in</a>
+    <!--Jumbotron-->
+    <div class="container-fluid p-5 bg-light">
+      <div class="jumbotron">
+        <h1 class="display-4">calculate.in</h1>
+        <p class="lead">A Perfect Calculater App as per your need.</p>
+        <hr class="my-4" />
+        <p>
+          Worried with complex calculations that performs complex operations,
+          Try calculate.in a perfect tool as per your need.
+        </p>
+        <p class="lead">
+          <a class="btn btn-secondary" href="#foot" role="button">Learn more</a>
+        </p>
+      </div>
     </div>
-  </nav>
 
-  <!--Jumbotron-->
-  <div class="container-fluid p-5 bg-light">
-    <div class="jumbotron ">
-      <h1 class="display-4">calculate.in</h1>
-      <p class="lead">A Perfect Calculater App as per your need.</p>
-      <hr class="my-4">
-      <p>Worried with complex calculations that performs complex operations, Try calculate.in a perfect tool as per your
-        need.</p>
-      <p class="lead">
-        <a class="btn btn-secondary" href="#foot" role="button">Learn more</a>
-      </p>
-    </div>
-  </div>
-
-  <!--Main Content-->
-  <div class="container-fluid">
-    <div class="row">
-
-      <!--Calculator-->
-      <div class="col-md-7 col-sm-12">
-        <div class="row p-3 m-1" id='calc'>
-          <p class="h4">Calculator : </p>
-          <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-secondary" role="button" data-bs-toggle="collapse"
-              data-bs-target="#norm" aria-expanded="false" aria-controls="norm">Normal</button>
-            <button type="button" class="btn btn-secondary" role="button" data-bs-toggle="collapse"
-              data-bs-target="#trig" aria-expanded="false" aria-controls="trig">Trignometric</button>
-            <button type="button" class="btn btn-secondary" role="button" data-bs-toggle="collapse"
-              data-bs-target="#matr" aria-expanded="false" aria-controls="matr">Matrices</button>
-          </div>
-          <!--Normal-->
-          <div class="collapse" id="norm" data-bs-parent="#calc">
-            <div class="card card-body py-5">
-              <div class="container">
-                <div class="row">
-                  <div class="col-sm-8 p-2">
-                    <div class="card card-body bg-dark z-depth-3">
-                      <div class="row">
-                        <div class="col"><input type="text" id="inp" class="form-control bg-light" readonly></div>
-                      </div>
-                      <div class="row mt-4">
-                        <div class="col-2"><button class="btn btn-outline-secondary numbers" id="num">1</button></div>
-                        <div class="col-2"><button class="btn btn-outline-secondary numbers" id="num">2</button></div>
-                        <div class="col-2"><button class="btn btn-outline-secondary numbers" id="num">3</button></div>
-                        <!--Add-->
-                        <div class="col-2"><button class="btn btn-secondary" value='+' id="add">+</button></div>
-                        <!--Multiply-->
-                        <div class="col-2"><button class="btn btn-secondary">x</button></div>
-                        <!--Clear-->
-                        <div class="col-2"><button class="btn btn-secondary">C</button></div>
-                      </div>
-                      <div class="row mt-4">
-                        <div class="col-2"><button class="btn btn-outline-secondary numbers" id="num">4</button></div>
-                        <div class="col-2"><button class="btn btn-outline-secondary numbers" id="num">5</button></div>
-                        <div class="col-2"><button class="btn btn-outline-secondary numbers" id="num">6</button></div>
-                        <!--Subtract-->
-                        <div class="col-2"><button class="btn btn-secondary">-</button></div>
-                        <!--Divide-->
-                        <div class="col-2"><button class="btn btn-secondary">&divide;</button></div>
-                        <!--Squareroot-->
-                        <div class="col-2"><button class="btn btn-secondary">&radic;</button></div>
-                      </div>
-                      <div class="row mt-4">
-                        <div class="col-2"><button class="btn btn-outline-secondary numbers" id="num">7</button></div>
-                        <div class="col-2"><button class="btn btn-outline-secondary numbers" id="num">8</button></div>
-                        <div class="col-2"><button class="btn btn-outline-secondary numbers" id="num">9</button></div>
-                        <!--Percentage-->
-                        <div class="col-2"><button class="btn btn-secondary">%</button></div>
-                        <!--Factorial-->
-                        <div class="col-2"><button class="btn btn-secondary">!</button></div>
-                        <!--Bracket left-->
-                        <div class="col-2"><button class="btn btn-secondary">(</button></div>
-                      </div>
-                      <div class="row mt-4 btn-group">
-                        <div class="col-2"><button class="btn btn-outline-secondary numbers" id="num">0</button></div>
-                        <div class="col-2"><button class="btn btn-outline-secondary">.</button></div>
-                        <div class="col-2"><button class="btn btn-danger">=</button></div>
-                        <!--log 10-->
-                        <div class="col-2"><button class="btn btn-secondary">ln</button></div>
-                        <!--exponent-->
-                        <div class="col-2"><button class="btn btn-secondary">e</button></div>
-                        <!--Bracket Right-->
-                        <div class="col-2"><button class="btn btn-secondary">)</button></div>
+    <!--Main Content-->
+    <div class="container-fluid">
+      <div class="row">
+        <!--Calculator-->
+        <div class="col-md-7 col-sm-12">
+          <div class="row p-3 m-1" id="calc">
+            <p class="h4">Calculator :</p>
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                role="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#norm"
+                aria-expanded="false"
+                aria-controls="norm"
+              >
+                Normal
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                role="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#trig"
+                aria-expanded="false"
+                aria-controls="trig"
+              >
+                Trignometric
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                role="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#matr"
+                aria-expanded="false"
+                aria-controls="matr"
+              >
+                Matrices
+              </button>
+            </div>
+            <!--Normal-->
+            <div class="collapse" id="norm" data-bs-parent="#calc">
+              <div class="card card-body py-5">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm-8 p-2">
+                      <div class="card card-body bg-dark z-depth-3">
+                        <div class="row">
+                          <div class="col">
+                            <input
+                              type="text"
+                              id="inp"
+                              class="form-control bg-light"
+                            />
+                          </div>
+                        </div>
+                        <div class="row mt-4">
+                          <div class="col-2">
+                            <button
+                              class="btn btn-outline-secondary numbers"
+                              id="num"
+                              value="1"
+                            >
+                              1
+                            </button>
+                          </div>
+                          <div class="col-2">
+                            <button
+                              class="btn btn-outline-secondary numbers"
+                              id="num"
+                              value="2"
+                            >
+                              2
+                            </button>
+                          </div>
+                          <div class="col-2">
+                            <button
+                              class="btn btn-outline-secondary numbers"
+                              id="num"
+                              value="3"
+                            >
+                              3
+                            </button>
+                          </div>
+                          <!--Add-->
+                          <div class="col-2">
+                            <button
+                              class="btn btn-secondary operators"
+                              value="+"
+                              id="plus"
+                            >
+                              +
+                            </button>
+                          </div>
+                          <!--Multiply-->
+                          <div class="col-2">
+                            <button
+                              class="btn btn-secondary operators"
+                              value="*"
+                              id="multiply"
+                            >
+                              x
+                            </button>
+                          </div>
+                          <!--Clear-->
+                          <div class="col-2">
+                            <button
+                              class="btn btn-secondary operators"
+                              value="C"
+                              id="clear"
+                            >
+                              C
+                            </button>
+                          </div>
+                        </div>
+                        <div class="row mt-4">
+                          <div class="col-2">
+                            <button
+                              class="btn btn-outline-secondary numbers"
+                              id="num"
+                              value="4"
+                            >
+                              4
+                            </button>
+                          </div>
+                          <div class="col-2">
+                            <button
+                              class="btn btn-outline-secondary numbers"
+                              id="num"
+                              value="5"
+                            >
+                              5
+                            </button>
+                          </div>
+                          <div class="col-2">
+                            <button
+                              class="btn btn-outline-secondary numbers"
+                              id="num"
+                              value="6"
+                            >
+                              6
+                            </button>
+                          </div>
+                          <!--Subtract-->
+                          <div class="col-2">
+                            <button
+                              class="btn btn-secondary operators"
+                              value="-"
+                              id="minus"
+                            >
+                              -
+                            </button>
+                          </div>
+                          <!--Divide-->
+                          <div class="col-2">
+                            <button
+                              class="btn btn-secondary operators"
+                              value="/"
+                              id="divide"
+                            >
+                              &divide;
+                            </button>
+                          </div>
+                          <!--Squareroot-->
+                          <div class="col-2">
+                            <button
+                              class="btn btn-secondary operators"
+                              value="sqrt"
+                              id="square"
+                            >
+                              &radic;
+                            </button>
+                          </div>
+                        </div>
+                        <div class="row mt-4">
+                          <div class="col-2">
+                            <button
+                              class="btn btn-outline-secondary numbers"
+                              value="7"
+                              id="num"
+                            >
+                              7
+                            </button>
+                          </div>
+                          <div class="col-2">
+                            <button
+                              class="btn btn-outline-secondary numbers"
+                              id="num"
+                              value="8"
+                            >
+                              8
+                            </button>
+                          </div>
+                          <div class="col-2">
+                            <button
+                              class="btn btn-outline-secondary numbers"
+                              id="num"
+                              value="9"
+                            >
+                              9
+                            </button>
+                          </div>
+                          <!--Percentage-->
+                          <div class="col-2">
+                            <button
+                              class="btn btn-secondary operators"
+                              id="percent"
+                              value="%"
+                            >
+                              %
+                            </button>
+                          </div>
+                          <!--Factorial-->
+                          <div class="col-2">
+                            <button
+                              class="btn btn-secondary operators"
+                              id="factorial"
+                              value="fact"
+                            >
+                              !
+                            </button>
+                          </div>
+                          <!--Bracket left-->
+                          <div class="col-2">
+                            <button class="btn btn-secondary">(</button>
+                          </div>
+                        </div>
+                        <div class="row mt-4 btn-group">
+                          <div class="col-2">
+                            <button
+                              class="btn btn-outline-secondary numbers"
+                              value="0"
+                              id="num"
+                            >
+                              0
+                            </button>
+                          </div>
+                          <div class="col-2">
+                            <button
+                              class="btn btn-outline-secondary numbers"
+                              id="dot"
+                              value="."
+                            >
+                              .
+                            </button>
+                          </div>
+                          <div class="col-2">
+                            <button
+                              class="btn btn-danger equalSign"
+                              id="equals"
+                              value="="
+                            >
+                              =
+                            </button>
+                          </div>
+                          <!--log 10-->
+                          <div class="col-2">
+                            <button class="btn btn-secondary" value="log">
+                              ln
+                            </button>
+                          </div>
+                          <!--exponent-->
+                          <div class="col-2">
+                            <button class="btn btn-secondary" value="exp">
+                              e
+                            </button>
+                          </div>
+                          <!--Bracket Right-->
+                          <div class="col-2">
+                            <button class="btn btn-secondary">)</button>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="col-sm-4 mt-4">
-                    <p class="h4">History</p>
-                    <div class="card card-body bg-light">
-                      Put History Here
+                    <div class="col-sm-4 mt-4">
+                      <p class="h4">History</p>
+                      <div class="card card-body bg-light" id="history">
+                        Put History Here
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <!--Trignometry-->
-          <div class="collapse" id="trig" data-bs-parent="#calc">
-            <div class="card card-body py-5 z-depth-3">
-              <div class="container">
-                <div class="row">
-                  <div class="col-sm-8 p-2">
-                    <div class="card card-body bg-dark">
-                      <div class="row">
-                        <div class="col"><input type="text" class="form-control bg-light" readonly></div>
-                      </div>
-                      <div class="row mt-4">
-                        <div class="col-2"><button class="btn btn-secondary numbers">e</button></div>
-                        <div class="col-2"><button class="btn btn-secondary numbers">log</button></div>
-                        <div class="col-2"><button class="btn btn-secondary numbers">ln</button></div>
-                        <!--Pi-->
-                        <div class="col-2"><button class="btn btn-secondary">&pi;</button></div>
-                        <!--Square Root-->
-                        <div class="col-2"><button class="btn btn-secondary">&radic;</button></div>
-                        <!--Clear-->
-                        <div class="col-2"><button class="btn btn-secondary">C</button></div>
-                      </div>
-                      <div class="row mt-4">
-                        <div class="col-2"><button class="btn btn-outline-secondary numbers"id="num">1</button></div>
-                        <div class="col-2"><button class="btn btn-outline-secondary numbers"id="num">2</button></div>
-                        <div class="col-2"><button class="btn btn-outline-secondary numbers"id="num">3</button></div>
-                        <!--Sine-->
-                        <div class="col-2"><button class="btn btn-sm btn-secondary">sin</button></div>
-                        <!--Cosine-->
-                        <div class="col-2"><button class="btn btn-sm btn-secondary">cos</button></div>
-                        <!--Tangent-->
-                        <div class="col-2"><button class="btn btn-sm btn-secondary">tan</button></div>
-                      </div>
-                      <div class="row mt-4">
-                        <div class="col-2"><button class="btn btn-outline-secondary numbers"id="num">4</button></div>
-                        <div class="col-2"><button class="btn btn-outline-secondary numbers"id="num">5</button></div>
-                        <div class="col-2"><button class="btn btn-outline-secondary numbers"id="num">6</button></div>
-                        <!--Sin Inverse-->
-                        <div class="col-2"><button class="btn btn-sm btn-secondary">sin<sup>-1</sup></button></div>
-                        <!--Cos Inverse-->
-                        <div class="col-2"><button class="btn btn-sm btn-secondary">cos<sup>-1</sup></button></div>
-                        <!--Tan Inverse-->
-                        <div class="col-2"><button class="btn btn-sm btn-secondary">tan<sup>-1</sup></button></div>
-                      </div>
-                      <div class="row mt-4">
-                        <div class="col-2"><button class="btn btn-outline-secondary numbers"id="num">7</button></div>
-                        <div class="col-2"><button class="btn btn-outline-secondary numbers"id="num">8</button></div>
-                        <div class="col-2"><button class="btn btn-outline-secondary numbers"id="num">9</button></div>
-                        <!--Cosec-->
-                        <div class="col-2"><button class="btn btn-sm btn-secondary">cosec</button></div>
-                        <!--Sec-->
-                        <div class="col-2"><button class="btn btn-sm btn-secondary">sec</button></div>
-                        <!--Cot-->
-                        <div class="col-2"><button class="btn btn-sm btn-secondary">cot</button></div>
-                      </div>
-                      <div class="row mt-4 btn-group">
-                        <div class="col-2"><button class="btn btn-outline-secondary numbers"id="num">0</button></div>
-                        <div class="col-2"><button class="btn btn-outline-secondary">.</button></div>
-                        <div class="col-2"><button class="btn btn-danger">=</button></div>
-                        <!--Cosec Inverse-->
-                        <div class="col-2"><button class="btn btn-sm btn-secondary">cosec<sup>-1</sup></button></div>
-                        <!--Sec Inverse-->
-                        <div class="col-2"><button class="btn btn-sm btn-secondary">sec<sup>-1</sup></button></div>
-                        <!--Cot Inverse-->
-                        <div class="col-2"><button class="btn btn-sm btn-secondary">cot<sup>-1</sup></button></div>
+            <!--Trignometry-->
+            <div class="collapse" id="trig" data-bs-parent="#calc">
+              <div class="card card-body py-5 z-depth-3">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm-8 p-2">
+                      <div class="card card-body bg-dark">
+                        <div class="row">
+                          <div class="col">
+                            <input
+                              type="text"
+                              class="form-control bg-light"
+                              readonly
+                            />
+                          </div>
+                        </div>
+                        <div class="row mt-4">
+                          <div class="col-2">
+                            <button class="btn btn-secondary numbers">e</button>
+                          </div>
+                          <div class="col-2">
+                            <button class="btn btn-secondary numbers">
+                              log
+                            </button>
+                          </div>
+                          <div class="col-2">
+                            <button class="btn btn-secondary numbers">
+                              ln
+                            </button>
+                          </div>
+                          <!--Pi-->
+                          <div class="col-2">
+                            <button class="btn btn-secondary">&pi;</button>
+                          </div>
+                          <!--Square Root-->
+                          <div class="col-2">
+                            <button class="btn btn-secondary">&radic;</button>
+                          </div>
+                          <!--Clear-->
+                          <div class="col-2">
+                            <button class="btn btn-secondary">C</button>
+                          </div>
+                        </div>
+                        <div class="row mt-4">
+                          <div class="col-2">
+                            <button
+                              class="btn btn-outline-secondary numbers"
+                              id="num"
+                            >
+                              1
+                            </button>
+                          </div>
+                          <div class="col-2">
+                            <button
+                              class="btn btn-outline-secondary numbers"
+                              id="num"
+                            >
+                              2
+                            </button>
+                          </div>
+                          <div class="col-2">
+                            <button
+                              class="btn btn-outline-secondary numbers"
+                              id="num"
+                            >
+                              3
+                            </button>
+                          </div>
+                          <!--Sine-->
+                          <div class="col-2">
+                            <button class="btn btn-sm btn-secondary">
+                              sin
+                            </button>
+                          </div>
+                          <!--Cosine-->
+                          <div class="col-2">
+                            <button class="btn btn-sm btn-secondary">
+                              cos
+                            </button>
+                          </div>
+                          <!--Tangent-->
+                          <div class="col-2">
+                            <button class="btn btn-sm btn-secondary">
+                              tan
+                            </button>
+                          </div>
+                        </div>
+                        <div class="row mt-4">
+                          <div class="col-2">
+                            <button
+                              class="btn btn-outline-secondary numbers"
+                              id="num"
+                            >
+                              4
+                            </button>
+                          </div>
+                          <div class="col-2">
+                            <button
+                              class="btn btn-outline-secondary numbers"
+                              id="num"
+                            >
+                              5
+                            </button>
+                          </div>
+                          <div class="col-2">
+                            <button
+                              class="btn btn-outline-secondary numbers"
+                              id="num"
+                            >
+                              6
+                            </button>
+                          </div>
+                          <!--Sin Inverse-->
+                          <div class="col-2">
+                            <button class="btn btn-sm btn-secondary">
+                              sin<sup>-1</sup>
+                            </button>
+                          </div>
+                          <!--Cos Inverse-->
+                          <div class="col-2">
+                            <button class="btn btn-sm btn-secondary">
+                              cos<sup>-1</sup>
+                            </button>
+                          </div>
+                          <!--Tan Inverse-->
+                          <div class="col-2">
+                            <button class="btn btn-sm btn-secondary">
+                              tan<sup>-1</sup>
+                            </button>
+                          </div>
+                        </div>
+                        <div class="row mt-4">
+                          <div class="col-2">
+                            <button
+                              class="btn btn-outline-secondary numbers"
+                              id="num"
+                            >
+                              7
+                            </button>
+                          </div>
+                          <div class="col-2">
+                            <button
+                              class="btn btn-outline-secondary numbers"
+                              id="num"
+                            >
+                              8
+                            </button>
+                          </div>
+                          <div class="col-2">
+                            <button
+                              class="btn btn-outline-secondary numbers"
+                              id="num"
+                            >
+                              9
+                            </button>
+                          </div>
+                          <!--Cosec-->
+                          <div class="col-2">
+                            <button class="btn btn-sm btn-secondary">
+                              cosec
+                            </button>
+                          </div>
+                          <!--Sec-->
+                          <div class="col-2">
+                            <button class="btn btn-sm btn-secondary">
+                              sec
+                            </button>
+                          </div>
+                          <!--Cot-->
+                          <div class="col-2">
+                            <button class="btn btn-sm btn-secondary">
+                              cot
+                            </button>
+                          </div>
+                        </div>
+                        <div class="row mt-4 btn-group">
+                          <div class="col-2">
+                            <button
+                              class="btn btn-outline-secondary numbers"
+                              id="num"
+                            >
+                              0
+                            </button>
+                          </div>
+                          <div class="col-2">
+                            <button class="btn btn-outline-secondary">.</button>
+                          </div>
+                          <div class="col-2">
+                            <button class="btn btn-danger">=</button>
+                          </div>
+                          <!--Cosec Inverse-->
+                          <div class="col-2">
+                            <button class="btn btn-sm btn-secondary">
+                              cosec<sup>-1</sup>
+                            </button>
+                          </div>
+                          <!--Sec Inverse-->
+                          <div class="col-2">
+                            <button class="btn btn-sm btn-secondary">
+                              sec<sup>-1</sup>
+                            </button>
+                          </div>
+                          <!--Cot Inverse-->
+                          <div class="col-2">
+                            <button class="btn btn-sm btn-secondary">
+                              cot<sup>-1</sup>
+                            </button>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="col-sm-4 mt-4">
-                    <p class="h4">History</p>
-                    <div class="card card-body bg-light z-depth-3">
-                      Put History Here
+                    <div class="col-sm-4 mt-4">
+                      <p class="h4">History</p>
+                      <div class="card card-body bg-light z-depth-3">
+                        Put History Here
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <!--Matrix-->
-          <div class="collapse" id="matr" data-bs-parent="#calc">
-            <div class="card card-body py-5">
-              <p class="h4 d-flex align-items-center justify-content-center">Coming Soon....</p>
+            <!--Matrix-->
+            <div class="collapse" id="matr" data-bs-parent="#calc">
+              <div class="card card-body py-5">
+                <p class="h4 d-flex align-items-center justify-content-center">
+                  Coming Soon....
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!--About Us-->
-      <div class="col-md-5 col-sm-12 bg-secondary text-white">
-        <div class="jumbotron p-5">
-          <h1 class="display-4">About Us</h1>
-          <hr class="my-4">
-          <p class="lead text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae non quidem iste.
-            Eum itaque nisi
-            delectus numquam id voluptatum at, iste dolorem, ipsam molestiae facere! Veritatis, rerum qui. Provident,
-            velit.
-          </p>
-          <p class="lead text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae non quidem iste.
-            Eum itaque nisi
-            delectus numquam id voluptatum at, iste dolorem, ipsam molestiae facere! Veritatis, rerum qui. Provident,
-            velit.
-          </p>
+        <!--About Us-->
+        <div class="col-md-5 col-sm-12 bg-secondary text-white">
+          <div class="jumbotron p-5">
+            <h1 class="display-4">About Us</h1>
+            <hr class="my-4" />
+            <p class="lead text-light">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+              non quidem iste. Eum itaque nisi delectus numquam id voluptatum
+              at, iste dolorem, ipsam molestiae facere! Veritatis, rerum qui.
+              Provident, velit.
+            </p>
+            <p class="lead text-light">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+              non quidem iste. Eum itaque nisi delectus numquam id voluptatum
+              at, iste dolorem, ipsam molestiae facere! Veritatis, rerum qui.
+              Provident, velit.
+            </p>
+          </div>
         </div>
       </div>
-
     </div>
-  </div>
 
-  <!--Footer-->
-  <footer class="footer position-relative bg-dark text-light py-5" id="foot">
-    <div class="container">
-      <div class="d-flex justify-content-around">
-        <a href="https://github.com/" class="text-white"><i class="fa fa-lg fa-github" aria-hidden="true"></i></a>
-        <a href="https://in.linkedin.com/" class="text-white"><i class="fa fa-lg fa-linkedin"
-            aria-hidden="true"></i></a>
-        <a href="https://stackoverflow.com/" class="text-white"><i class="fa fa-lg fa-stack-overflow"
-            aria-hidden="true"></i></a>
+    <!--Footer-->
+    <footer class="footer position-relative bg-dark text-light py-5" id="foot">
+      <div class="container">
+        <div class="d-flex justify-content-around">
+          <a href="https://github.com/" class="text-white"
+            ><i class="fa fa-lg fa-github" aria-hidden="true"></i
+          ></a>
+          <a href="https://in.linkedin.com/" class="text-white"
+            ><i class="fa fa-lg fa-linkedin" aria-hidden="true"></i
+          ></a>
+          <a href="https://stackoverflow.com/" class="text-white"
+            ><i class="fa fa-lg fa-stack-overflow" aria-hidden="true"></i
+          ></a>
+        </div>
+        <hr class="my-4 bg-white" />
+        <p class="h6 d-flex justify-content-center">
+          &copy; Mayank Singh | Sheikh Abdun | 2021
+        </p>
       </div>
-      <hr class="my-4 bg-white">
-      <p class="h6 d-flex justify-content-center">&copy; Mayank Singh | Sheikh Abdun | 2021</p>
-    </div>
-  </footer>
+    </footer>
 
-  <!--Bootstrap JS CDN-->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
-    integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
-    crossorigin="anonymous"></script>
+    <!--Bootstrap JS CDN-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+      integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+      crossorigin="anonymous"
+    ></script>
     <!--Custom Script for Calculator Functionality-->
-  <script src="js/app.js"></script>
-
-
-</body>
-
+  </body>
 </html>
