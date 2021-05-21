@@ -16,7 +16,7 @@
             padding: 15px;
             border-radius: 10px;
         }
-        .calc-disp{
+        #calc-disp{
             width: 100%;
             height: 50px;
             border: none;
@@ -24,6 +24,7 @@
             background-color: #c6ffc1;
             font-size: 30px;
             margin-bottom: 20px;
+            text-align: right;
         }
         input[type=button]
         {
@@ -33,45 +34,55 @@
             margin: 3px;
             border: none;
             border-radius: 10px;
-            color: #fffbdf;
-        }   
+            color: #fff;
+        }  
     </style>
 </head>
 <body>
     <div class="calc">
-        <input type="text" class="calc-disp">
+        <input type="text" id="calc-disp">
         <table>
             <tr>
-                <td><input type="button" value="("></td>
-                <td><input type="button" value=")"></td>
-                <td><input type="button" value="C" class="clear"></td>
-                <td><input type="button" value="&radic;" class="operators"></td>
+                <td><input type="button" value="(" class="op"></td>
+                <td><input type="button" value=")" class="op"></td>
+                <td><input type="button" value="C" id="clear"></td>
+                <td><input type="button" value="*" class="op"></td>
             </tr>
             <tr>
-                <td><input type="button" value="9" class="numbers"></td>
-                <td><input type="button" value="8" class="numbers"></td>
-                <td><input type="button" value="7" class="numbers"></td>
-                <td><input type="button" value="x" class="operators"></td>
+                <td><input type="button" value="7" class="op"></td>
+                <td><input type="button" value="8" class="op"></td>
+                <td><input type="button" value="9" class="op"></td>
+                <td><input type="button" value="/" class="op"></td>
             </tr>
             <tr>
-                <td><input type="button" value="6" class="numbers"></td>
-                <td><input type="button" value="5" class="numbers"></td>
-                <td><input type="button" value="4" class="numbers"></td>
-                <td><input type="button" value="&divide;" class="operators"></td>
+                <td><input type="button" value="4" class="op"></td>
+                <td><input type="button" value="5" class="op"></td>
+                <td><input type="button" value="6" class="op"></td>
+                <td><input type="button" value="-" class="op"></td>
             </tr>
             <tr>
-                <td><input type="button" value="3" class="numbers"></td>
-                <td><input type="button" value="2" class="numbers"></td>
-                <td><input type="button" value="1" class="numbers"></td>
-                <td><input type="button" value="-" class="operators"></td>
+                <td><input type="button" value="1" class="op"></td>
+                <td><input type="button" value="2" class="op"></td>
+                <td><input type="button" value="3" class="op"></td>
+                <td><input type="button" value="+" class="op"></td>
             </tr>
             <tr>
-                <td><input type="button" value="."></td>
-                <td><input type="button" value="0" class="numbers"></td>
-                <td><input type="button" value="=" class="equal"></td>
-                <td><input type="button" value="+" class="operators"></td>
+                <td><input type="button" value="." class="op"></td>
+                <td><input type="button" value="0" class="op"></td>
+                <td colspan="2"><input type="button" value="=" id="equal" style="width: 106px;background-color: aqua;color:#000"></td>
             </tr>
         </table>
     </div>
+    <script>
+        const dis = document.getElementById("calc-disp")
+        const clr = document.getElementById("clear").addEventListener('click',()=>dis.value='')
+        const eql = document.getElementById("equal").addEventListener('click',()=>dis.value=eval(dis.value))
+        const opr = document.getElementsByClassName("op")
+        for(let i = 0; i<opr.length; i++){
+            opr[i].addEventListener('click',()=>{
+                dis.value += opr[i].value
+            })
+          }
+    </script>
 </body>
 </html>
